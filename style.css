@@ -1,15 +1,35 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Georgia', serif;
     margin: 0;
     padding: 0;
+    background: linear-gradient(135deg, #1e4620 0%, #3a7d44 50%, #2d5a2f 100%);
+    min-height: 100vh;
+    color: #f0f0f0;
 }
 
 header {
-    background-color: #f8f9fa;
+    background: linear-gradient(to bottom, #2d5a2f, #1e4620);
     padding: 20px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 3px solid #8b6914;
     display: flex;
     justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+header a {
+    color: #f4ead5;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: rgba(107, 142, 35, 0.6);
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+header a:hover {
+    background: #6b8e23;
+    transform: scale(1.05);
 }
 
 .search-container {
@@ -20,10 +40,23 @@ header {
 
 #search-bar {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px;
+    border: 2px solid #8b6914;
+    border-radius: 8px;
     font-size: 16px;
+    background: #f4ead5;
+    color: #2d4a2b;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#search-bar::placeholder {
+    color: #6b8e5f;
+}
+
+#search-bar:focus {
+    outline: none;
+    border-color: #c9ad4f;
+    box-shadow: 0 0 10px rgba(201, 173, 79, 0.5);
 }
 
 /* La boîte qui va contenir les résultats de l'autocomplétion */
@@ -33,74 +66,133 @@ header {
     /* Juste en dessous de l'input */
     left: 0;
     right: 0;
-    background: white;
-    border: 1px solid #ddd;
+    background: linear-gradient(to bottom, #f9f4e8, #ede4cf);
+    border: 2px solid #8b6914;
     border-top: none;
     z-index: 1000;
     max-height: 300px;
     overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Chaque ligne de résultat */
 .suggestion-item {
     padding: 10px;
     cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: all 0.3s;
 }
 
 .suggestion-item:hover {
-    background-color: #f0f0f0;
+    background: linear-gradient(to right, #d4c89f, #e8dfc3);
+    border-left-color: #6b8e23;
 }
 
 .suggestion-item a {
     text-decoration: none;
-    color: #333;
+    color: #2d4a2b;
     display: block;
+    font-weight: 500;
 }
 
 .suggestion-item a:hover {
-    color: #1a0dab;
+    color: #1e4620;
 }
 
 /* La petite barre de séparation demandée dans le projet */
 .separator {
-    height: 1px;
-    background-color: #eee;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #8b6914, transparent);
     margin: 5px 0;
-    border-bottom: 1px dashed #ccc;
 }
 
 /* Style pour la page recherche.php */
 .results-list {
     list-style: none;
     padding: 0;
+    max-width: 800px;
+    margin: 20px auto;
 }
 
 .results-list li {
     margin-bottom: 20px;
     padding: 15px;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    transition: box-shadow 0.3s;
+    background: linear-gradient(135deg, #f4ead5, #e8dfc3);
+    border: 2px solid #8b6914;
+    border-radius: 10px;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .results-list li:hover {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(139, 105, 20, 0.4);
 }
 
 .results-list a {
     font-size: 1.2rem;
-    color: #1a0dab;
-    /* Bleu style Google */
+    color: #2d5a2f;
     text-decoration: none;
     font-weight: bold;
+}
+
+.results-list a:hover {
+    color: #6b8e23;
 }
 
 /* Style pour la page element.php */
 .animal-card {
     max-width: 600px;
     margin: 50px auto;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    background: linear-gradient(135deg, #f9f4e8, #d4c89f);
+    border: 3px solid #8b6914;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     text-align: center;
+}
+
+.animal-card h1 {
+    color: #2d5a2f;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.animal-card p {
+    color: #4a4a3a;
+    font-size: 1.1rem;
+    margin: 15px 0;
+}
+
+.animal-card a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #6b8e23;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.animal-card a:hover {
+    background: #556b1d;
+    transform: scale(1.05);
+}
+
+main {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+main h1 {
+    color: #f4ead5;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    font-size: 2.5rem;
+}
+
+main p {
+    color: #d4c89f;
+    font-size: 1.2rem;
 }
