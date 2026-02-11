@@ -8,8 +8,11 @@
 <body>
     <header>
         <div class="search-container">
-            <input type="text" id="search-bar" placeholder="Rechercher un animal..." autocomplete="off">
-            <div id="suggestions"></div> </div>
+            <form action="recherche.php" method="GET">
+                <input type="text" id="search-bar" name="search" placeholder="Rechercher un animal..." autocomplete="off">
+                <div id="suggestions"></div>
+            </form>
+        </div>
     </header>
 
     <main>

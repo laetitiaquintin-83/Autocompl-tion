@@ -18,11 +18,14 @@ if (!$animal) {
 <html>
 <head>
     <title><?php echo $animal['nom']; ?></title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1><?php echo $animal['nom']; ?></h1>
-    <p><strong>Espèce :</strong> <?php echo $animal['espece']; ?></p>
-    <p><strong>Habitat :</strong> <?php echo $animal['habitat']; ?></p>
-    <a href="index.php">Retour à la recherche</a>
+    <div class="animal-card">
+        <h1><?php echo $animal['nom']; ?></h1>
+        <p><strong>Espèce :</strong> <?php echo $animal['espece']; ?></p>
+        <p><strong>Habitat :</strong> <?php echo $animal['habitat']; ?></p>
+        <a href="index.php">Retour à la recherche</a>
+    </div>
 </body>
 </html>
