@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container {
+    position: relative;
+    /* Très important pour placer les suggestions dessous */
+    width: 400px;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* La boîte qui va contenir les résultats de l'autocomplétion */
+#suggestions {
+    position: absolute;
+    top: 100%;
+    /* Juste en dessous de l'input */
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Chaque ligne de résultat */
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* La petite barre de séparation demandée dans le projet */
+.separator {
+    height: 1px;
+    background-color: #eee;
+    margin: 5px 0;
+    border-bottom: 1px dashed #ccc;
+}
